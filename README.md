@@ -79,7 +79,7 @@ Goal: Reduce production outages
 
 ## Business Impact
 
-- Reduced SLA breach risk
-- Improved ticket routing efficiency
-- Better incident volume planning
-- Proactive change risk detection
+- Early identification of high-priority incidents improves SLA adherence.
+- Forecasting improves workforce planning and capacity management.
+- Automated routing reduces manual triaging overhead.
+- Change risk prediction reduces production outages.
