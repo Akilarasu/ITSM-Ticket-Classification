@@ -1,0 +1,10 @@
+select * from project_itsm.dataset_list;
+select Impact, count(*) from project_itsm.dataset_list group by Impact;
+select Urgency, count(*) from project_itsm.dataset_list group by Urgency;
+select Priority, count(*) from project_itsm.dataset_list group by Priority;
+select count(*) as total_records from project_itsm.dataset_list;
+select sum(case when Impact is null then 1 else 0 end) as Impact_nulls, sum(case when Urgency is null then 1 else 0 end) as Urgency_nulls, sum(case when Priority is null then 1 else 0 end) as Priority_nulls, sum(case when Open_Time is null then 1 else 0 end) as Open_Time_nulls, sum(case when Resolved_Time is null then 1 else 0 end) as Resolved_Time_nulls from project_itsm.dataset_list;
+select Impact, Urgency, Priority, count(*) from project_itsm.dataset_list group by Impact, Urgency, Priority;
+select Priority, avg(Handle_Time_hrs) from project_itsm.dataset_list group by Priority;
+select Priority, avg(No_of_Reassignments) as Average_Reassignment from project_itsm.dataset_list group by Priority;
+select CI_Cat,CI_Subcat, count(*) as high_priority_count from project_itsm.dataset_list where Priority in (1,2) group by CI_Cat,CI_Subcat order by high_priority_count desc;
